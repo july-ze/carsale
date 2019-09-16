@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/car-sale-bean/car-sale-bean.iml" filepath="$PROJECT_DIR$/car-sale-bean/car-sale-bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/car-sale-mapper/car-sale-mapper.iml" filepath="$PROJECT_DIR$/car-sale-mapper/car-sale-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/car-sale-parent.iml" filepath="$PROJECT_DIR$/car-sale-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/car-sale-service/car-sale-service.iml" filepath="$PROJECT_DIR$/car-sale-service/car-sale-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/car-sale-util/car-sale-util.iml" filepath="$PROJECT_DIR$/car-sale-util/car-sale-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/car-sale-web/car-sale-web.iml" filepath="$PROJECT_DIR$/car-sale-web/car-sale-web.iml" />
+    </modules>
+  </component>
+</project>
