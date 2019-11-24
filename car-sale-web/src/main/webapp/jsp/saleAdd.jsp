@@ -31,10 +31,10 @@
         <div class="x_content">
             <br/>
             <form id="addCustomer" data-parsley-validate class="form-horizontal form-label-left"
-                  action="${pageContext.request.contextPath}/sale/insertSale.action" method="post">
+                  action="${pageContext.request.contextPath}/sale/insertSale" method="post">
                 <input type="hidden" name="saleType" value="1"/>
-                <input type="hidden" name="adminEmpId" value="${emp.empId}"/>
-                <input id="saleCompany" type="hidden" name="companyId" value="${emp.companyId}"/>
+                <input type="hidden" name="adminEmpId" value="${employee.empId}"/>
+                <input id="saleCompany" type="hidden" name="companyId" value="${employee.companyId}"/>
 
                 <%--<div class="form-group">--%>
                     <%--<label class="control-label col-md-3 col-sm-3 col-xs-12">购车客户</label>--%>
@@ -51,9 +51,9 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">购车客户</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="carId" id="saleCustomerName" class="select2_single form-control"
+                        <select name="customerId" id="saleCustomerName" class="select2_single form-control"
                                 tabindex="-1">
-                            <option value="0">---选择库存汽车---</option>
+                            <option value="0">---选择公司客户---</option>
                         </select>
                     </div>
                 </div>
@@ -75,6 +75,7 @@
                         <div class="input-group">
                             <input id="saleCarSeries" type="text" class="form-control"
                                    readonly="readonly">
+                            <input type="hidden" name="repertoryId" id="repertoryId"/>
                         </div>
                     </div>
                 </div>
@@ -89,11 +90,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">汽车价格</label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">含税价格</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="input-group">
-                            <input id="saleCurPrice" name="saleCurPrice" type="text" class="form-control"
+                            <input id="purchasePrice" name="purchasePrice" type="text" class="form-control"
                                    readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">销售价格</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="input-group">
+                            <input id="saleCurPrice" name="saleCurprice" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -114,7 +123,7 @@
                         <span class="required">*</span>
                     </label>
                     <p id="saleNum" style="margin-bottom: 0px;border-left-width: 0px;padding-left: 130px;padding-top: 5px;">
-                        1:
+                        one:
                         <input type="radio" class="flat" name="saleNum" value="1" checked="checked"/>
                     </p>
                 </div>

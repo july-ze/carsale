@@ -43,6 +43,12 @@
         where emp_Id = #{empId,jdbcType=INTEGER}
     </select>
 
+    <select id="selectEmployeeByCompanyId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from employee where position_Id = 2
+        and company_Id = #{companyId,jdbcType=INTEGER}
+    </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete from employee

@@ -26,4 +26,11 @@ public interface EmployeeService {
 	 * @return
 	 */
 	int addEmployee(Employee employee);
+
+	/**
+	 * 根据公司Id查询该公司员工信息
+	 * @param companyId
+	 * @return
+	 */
+    List<Employee> findEmployeeByCompanyId(Integer companyId);
 }

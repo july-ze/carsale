@@ -50,4 +50,6 @@ public interface CarSeriesMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(CarSeries record);
+
+    CarSeries selectBySeriesId(Integer seriesId);
 }

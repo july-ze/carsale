@@ -1,4 +1,5 @@
 import com.hzit.mapper.AdminLogMapper;
+import com.hzit.mapper.RepertoryMapper;
 import com.hzit.mapper.SaleMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,8 @@ public class TestMapper {
     AdminLogMapper dao;
     @Autowired
     SaleMapper saleMapper;
+    @Autowired
+    RepertoryMapper repertoryMapper;
 
 
     @Test
@@ -23,6 +26,6 @@ public class TestMapper {
     }
     @Test
     public void test01() {
-        System.out.println(saleMapper.selectByCompanyId(1));
+        System.out.println(repertoryMapper.selectByCompanyId(1));
     }
 }

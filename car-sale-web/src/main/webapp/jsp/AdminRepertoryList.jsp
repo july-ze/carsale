@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: sasa
-  Date: 2019/9/15
-  Time: 20:30
+  Date: 2019/9/17
+  Time: 16:02
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>飞云汽车销售管理系统</title>
+    <title>飞云汽车销售管理系统 </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
                 <%@include file="userLeft.jsp" %>
                 <!-- /menu profile quick info -->
 
-                <br/>
+                <br />
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -62,31 +62,28 @@
                             <li><a><i class="fa fa-home"></i> 主页消息 <span
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/login/goMain">
-                                            欢迎页</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/login/goMain">
+                                        欢迎页</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-user"></i> 客户管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/customer/getAllCustomer.action?empId=${emp.empId}">
-                                            客户资料</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/customer/getAllCustomer.action?empId=${emp.empId}">
+                                        客户资料</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a><i class="fa fa-desktop"></i> 销售管理
+                            <li><a><i class="fa fa-desktop"></i> 销售管理
+                                <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="${pageContext.request.contextPath}/sale/list">
+                                        车辆销售</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a><i class="fa fa-th-list"></i> 库存管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: block;">
                                     <li class="current-page">
-                                        <a href="${pageContext.request.contextPath}/sale/list">
-                                            车辆销售</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-th-list"></i> 库存管理
-                                <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li>
                                         <a href="${pageContext.request.contextPath}/repertory/getAllRepertory">
                                             车辆库存</a></li>
                                 </ul>
@@ -94,34 +91,28 @@
                             <li><a><i class="fa fa-cny"></i> 财务管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/order/getAllReceipt.action?empId=${emp.empId}">
-                                            收款</a></li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/order/getAllOrder.action?empId=${emp.empId}">
-                                            付款</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/order/getAllReceipt.action?empId=${emp.empId}">
+                                        收款</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/order/getAllOrder.action?empId=${emp.empId}">
+                                        付款</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-bar-chart-o"></i>报表管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/employeeSale/getEmpId.action?empId=${emp.empId}">
-                                            员工销量</a></li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/finance/getEmpId.action?empId=${emp.empId}">
-                                            财务状况</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/employeeSale/getEmpId.action?empId=${emp.empId}">
+                                        员工销量</a></li>
+                                    <li ><a href="${pageContext.request.contextPath}/finance/getEmpId.action?empId=${emp.empId}">
+                                        财务状况</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-cog"></i> 系统管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/system/getAllEmp.action?empId=${emp.empId}">
-                                            员工管理</a></li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/system/getAllLog.action?empId=${emp.empId}">
-                                            日志信息</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/system/getAllEmp.action?empId=${emp.empId}">
+                                        员工管理</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/system/getAllLog.action?empId=${emp.empId}">
+                                        日志信息</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -140,12 +131,12 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <!--查询销售情况-开始-->
+            <!--查询库存情况-开始-->
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>车辆销售情况</h2>
+                            <h2>车辆库存情况</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -159,52 +150,39 @@
                             <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>客户姓名</th>
-                                    <th>客户电话</th>
-                                    <th>汽车</th>
-                                    <th>单价</th>
-                                    <th>数量</th>
-                                    <th>销售员</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
+                                    <th>汽车名称</th>
+                                    <th>汽车售价</th>
+                                    <th>库存数量</th>
+                                    <th>汽车进价</th>
+                                    <th>入库时间</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <c:forEach items="${saleList}" var="sale">
+                                <c:forEach items="${repertoryList}" var="repertory">
                                     <tr>
-                                        <td>${sale.customer.customerName}</td>
-                                        <td>${sale.customer.customerPhone}</td>
-                                        <td>${sale.car.carName}</td>
-                                        <td>¥${sale.saleCurprice}</td>
-                                        <td>${sale.saleNum}</td>
-                                        <td>${sale.employee.empName}</td>
-                                        <td>${sale.getSaleTypeFormat()}</td>
-                                        <td>
-                                            <c:if test="${sale.getSaleTypeFormat()=='未付款'}">
-                                                <a href="${pageContext.request.contextPath}/sale/updateSale?saleId=${sale.saleId}">
-                                                    <button type="button" class="btn btn-info btn-xs">付款</button>
-                                                </a>
-                                            </c:if>
-                                        </td>
+                                        <td>${repertory.car.carName}</td>
+                                        <td style="color: red">¥${repertory.purchasePrice}</td>
+                                        <td>${repertory.repertoryNum}</td>
+                                        <td>¥${repertory.car.carPrice}</td>
+                                        <td>${repertory.getInTimeFormat()}</td>
                                     </tr>
                                 </c:forEach>
+                                <input type="hidden" v="${repertoryList}">
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--查询销售情况-结束-->
+            <!--查询库存情况-结束-->
 
             <div class="row">
-                <!--添加销售-开始-->
-                <%@include file="saleAdd.jsp" %>
-                <!--添加销售-结束-->
+                <!--下订单-开始-->
+                <%@include file="repertoryAdd.jsp" %>
+                <!--下订单-结束-->
 
             </div>
-            <!-- 付款确认模式窗口 -->
-            <%@include file="customerPayment.jsp" %>
 
         </div>
         <!-- /page content -->
@@ -220,7 +198,7 @@
 <script src="../vendors/jquery/dist/jquery.min.js"></script>
 
 <!-- 引入js文件 -->
-<script type="text/javascript" src="../js/sale.js"></script>
+<script type="text/javascript" src="../js/repertory.js"></script>
 
 <!-- Bootstrap -->
 <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -261,4 +239,3 @@
 
 
 </html>
-

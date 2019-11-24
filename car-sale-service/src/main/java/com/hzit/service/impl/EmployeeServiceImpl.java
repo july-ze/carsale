@@ -8,6 +8,8 @@ import com.hzit.util.SystemServiceLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -36,6 +38,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public int addEmployee(Employee employee) {
         return employeeMapper.insert(employee);
+    }
+
+    @Override
+    public List<Employee> findEmployeeByCompanyId(Integer companyId) {
+        return employeeMapper.selectEmployeeByCompanyId(companyId);
     }
 
 

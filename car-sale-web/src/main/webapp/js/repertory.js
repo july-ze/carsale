@@ -3,9 +3,9 @@ $(function () {
 
     /*ajax获取汽车品牌的json数据*/
     $.getJSON(
-        projectName + '/order/getAllCarBrand.action',
-        function (json) {
-            var carbrandList = json.carbrandList;
+        projectName + '/order/getAllCarBrand',
+        function (carbrandList) {
+            //var carbrandList = json.carbrandList;
             console.log(carbrandList);
 
             for (var i = 0; i < carbrandList.length; i++ ) {
@@ -24,10 +24,10 @@ $(function () {
         $('#selectCar option:gt(0)').remove();
         /*ajax获取汽车车系的json数据*/
         $.getJSON(
-            projectName + '/order/getAllCarSeries.action',
+            projectName + '/order/getAllCarSeries',
             {brandId:brandId},
             function (json) {
-                var carseriesList = json.carseriesList;
+                var carseriesList = json.carSeriesList;
                 console.log(carseriesList);
 
                 for (var i = 0; i < carseriesList.length; i++ ) {
@@ -49,10 +49,10 @@ $(function () {
         $('#selectCar option:gt(0)').remove();
         /*ajax获取汽车车系的json数据*/
         $.getJSON(
-            projectName + '/order/getAllCar.action',
+            projectName + '/order/getAllCar',
             {seriesId:seriesId},
-            function (json) {
-                var carList = json.carList;
+            function (carList) {
+               // var carList = json.carList;
                 console.log(carList);
 
                 for (var i = 0; i < carList.length; i++ ) {
@@ -73,10 +73,10 @@ $(function () {
     $('#selectCar').change(function() {
         var carId = $(this).val();
         $.getJSON(
-            projectName + '/order/getCarPriceById.action',
+            projectName + '/order/getCarPriceById',
             {carId:carId},
-            function (json) {
-                var carById = json.carById;
+            function (carById) {
+                //var carById = json.carById;
                 console.log(carById);
 
                 var carPrice = carById.carPrice;

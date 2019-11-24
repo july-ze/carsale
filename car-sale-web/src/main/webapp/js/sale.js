@@ -46,17 +46,14 @@ $(function () {
 
     /*获取所有库存的车辆*/
     $.getJSON(
-        projectName + '/sale/getAllRepertoryCarName.action',
-        {companyId: companyId},
-        function (json) {
-            var repertoryList = json.repertoryList;
-            console.log(repertoryList);
+        projectName + '/repertory/list',
+        function (repertoryList) {
             //将所有库存的汽车展现在下拉框中
             for (var i = 0; i < repertoryList.length; i++ ) {
                 var repertoryCar = repertoryList[i];
                 console.log(repertoryCar);
                 var option = "<option value='" + repertoryCar.carId  +"' seriesId='" + repertoryCar.car.seriesId +
-                    "'purchasePrice='" + repertoryCar.purchasePrice + "'>" +
+                    "'purchasePrice='" + repertoryCar.purchasePrice + "'repertoryId='"+repertoryCar.repertoryId+"'>" +
                     repertoryCar.car.carName + "</option>";
                 $("#saleSelectBrand").append(option);
             }
@@ -66,33 +63,33 @@ $(function () {
     $('#saleSelectBrand').change(function () {
         var seriesId = $("#saleSelectBrand option:selected").attr('seriesId');
         var purchasePrice = $("#saleSelectBrand option:selected").attr('purchasePrice');
+        var repertoryId = $("#saleSelectBrand option:selected").attr('repertoryId');
         console.log(seriesId);
         console.log(purchasePrice);
         //清空车系和品牌
         $('#saleCarSeries').val('');
         $('#saleCarBrand').val('');
-        $('#saleCurPrice').val('');
+        $('#purchasePrice').val('');
+        $('#repertoryId').val('');
 
         /*ajax获取汽车车系的json数据*/
         $.getJSON(
-            projectName + '/sale/getCarSeriesById.action',
+            projectName + '/sale/getCarSeriesById',
             {seriesId:seriesId},
             function (json) {
                 var carseriesById = json.carseriesById;
                 console.log(carseriesById);
-
                 $('#saleCarSeries').val(carseriesById.seriesName);
-                $('#saleCarBrand').val(carseriesById.carbrand.brandName);
-                $('#saleCurPrice').val(purchasePrice);
-
+                $('#saleCarBrand').val(carseriesById.carBrand.brandName);
+                $('#purchasePrice').val(purchasePrice);
+                $('#repertoryId').val(repertoryId);
             });
 
     });
 
     /*根据公司编号查询销售员工*/
     $.getJSON(
-        projectName + '/sale/getAllEmpByCompanyId.action',
-        {companyId: companyId},
+        projectName + '/sale/getAllEmpByCompanyId',
         function (json) {
             var employeeList = json.employeeList;
             console.log(employeeList);

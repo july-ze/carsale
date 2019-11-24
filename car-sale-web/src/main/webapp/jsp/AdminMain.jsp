@@ -65,7 +65,7 @@
                                     class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu" style="display: block;">
                                     <li class="current-page"><a
-                                            href="${pageContext.request.contextPath}/login/goMain.action?empId=${emp.empId}">
+                                            href="${pageContext.request.contextPath}/login/goMain">
                                         欢迎页</a></li>
                                 </ul>
                             </li>
@@ -86,7 +86,7 @@
                             <li><a><i class="fa fa-th-list"></i> 库存管理
                                 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="${pageContext.request.contextPath}/repertory/getAllRepertory.action?empId=${emp.empId}">
+                                    <li><a href="${pageContext.request.contextPath}/repertory/getAllRepertory">
                                         车辆库存</a></li>
                                 </ul>
                             </li>
